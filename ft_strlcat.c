@@ -27,7 +27,7 @@ if (ft_strlen(dst) >= dstsize)
 else
 {
     i = ft_strlen(dst);
-    while ((i + 1) < dstsize)
+    while ((i + 1) < dstsize && src[j] != '\0')
     {
         dst[i] = src[j];
         i++;
