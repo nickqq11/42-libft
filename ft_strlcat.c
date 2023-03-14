@@ -36,4 +36,12 @@ else
     dst[i] = '\0';
     return((int)i);
 }
-
+/*
+ int main ()
+  {
+      char a[] = "ABCD";
+      char b[] = "1234";
+      int c = ft_strlcat(a, b, 6);
+    printf ("%d,,,%s\n",c, a);
+    return 0;
+  }*/
