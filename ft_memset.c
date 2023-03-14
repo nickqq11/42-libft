@@ -6,12 +6,12 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:37:46 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/08 17:40:24 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/14 15:16:13 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
 
-void	ft_memset(void *b, int c, size_t len)
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*chris;
 
@@ -22,6 +22,7 @@ void	ft_memset(void *b, int c, size_t len)
 		chris++;
 		len--;
 	}
+	return(b);
 }
 /*
 #include<stdio.h>
