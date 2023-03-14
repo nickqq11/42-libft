@@ -18,11 +18,22 @@ size_t i,j;
 
 i = 0;
 j = 0;
-while (dst[i] != '\0')
+
+
+if (ft_strlen(dst) >= dstsize)
 {
-    i++;
+    return(dstsize + ft_strlen(src));
 }
-if (i >= dstsize)
-return(i);
-else 
-while ()
+else
+{
+    i = ft_strlen(dst);
+    while ((i + 1) < dstsize)
+    {
+        dst[i] = src[j];
+        i++;
+        j++;
+    }
+    dst[i] = '\0';
+    return((int)i);
+}
+
