@@ -6,7 +6,7 @@
 #    By: nhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 17:53:07 by nhuang            #+#    #+#              #
-#    Updated: 2023/03/18 21:25:21 by nhuang           ###   ########.fr        #
+#    Updated: 2023/03/19 21:05:03 by nhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,13 @@ NAME = libft.a
 
 CC = gcc -Wall -Wextra -Werror 
 
-OBJECTS = $(patsubst %.c, %.o, )
+OBJECTS = $(patsubst %.c,%.o,$(wildcard ft_*.c))
+
+all : $(NAME)
+
+$(NAME) : $(OBJECTS)
+	@echo "compiling $@ from $^"
+	@ar -rcs $@ $^
 
 %.o : %.c 
 	@$(CC) -c $< -o $@

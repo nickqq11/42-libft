@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 16:26:08 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/19 21:52:57 by nhuang           ###   ########.fr       */
+/*   Created: 2023/03/19 21:14:34 by nhuang            #+#    #+#             */
+/*   Updated: 2023/03/19 21:53:28 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-
-char *ft_strchr(const char *s, int c)
+char    *ft_strrchr(const char *s, int c)
 {
     int i;
+    char *temp;
   
     i = 0;
     while (*s != '\0')
     {
         if (c == *s)
         {
-            return((char*) s);
+            temp = s;
         }
         s++;        
     }
-    return(NULL);
+    if (temp != '\0')
+    {
+        return((char*) temp);
+    }
+    else 
+    {
+        return(NULL);
+    }
 }
-/*
-int main () 
-{
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 'z';
-   char *ret;
 
-   ret = ft_strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   return(0);
-}*/
+please re do
