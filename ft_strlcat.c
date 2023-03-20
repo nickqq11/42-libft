@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:16:50 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/19 20:31:36 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/20 13:57:47 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ else
   {
       char a[] = "ABCD";
       char b[] = "1234";
-      int c = ft_strlcat(a, b, 6);
+      int c = ft_strlcat(a, b, 2);
     printf ("%d,,,%s\n",c, a);
     return 0;
   }*/
