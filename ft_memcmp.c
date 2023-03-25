@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:41:36 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/21 19:06:10 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/24 21:31:21 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (i < n)
@@ -25,4 +25,5 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
         }
         i++;
     }
+    return(0);
 }

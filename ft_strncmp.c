@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:02:45 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/20 16:15:54 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/24 21:32:19 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while(i < n)
