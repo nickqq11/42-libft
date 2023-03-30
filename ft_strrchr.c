@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 21:14:34 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/27 13:52:19 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/30 08:01:13 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
-	char	*start;
+	unsigned char	*start;
 
-	start = s;
+	start = (unsigned char *)s;
 	i = ft_strlen(s);
 	s = (s + i);
 	while (*s != *start && c != *s)
