@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:16:50 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/28 16:25:02 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/31 15:54:05 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	count = 0;
 	srclen = ft_strlen(src);
 	dstend = ft_strlen(dst);
-	if (!dst || !src)
-		return (0);
-	if (dstsize != 0)
+	if (!dstsize)
+		return (dstend + dstsize);
+	while (dstend < (dstsize - 1) && src[count] != '\0')
 	{
-		while (dstend < (dstsize - 1) && src[count] != '\0')
-		{
-			dst[dstend] = src[count];
-			count++;
-			dstend++;
-		}
-	dst[dstend] = '\0';
+		dst[dstend] = src[count];
+		count++;
+		dstend++;
 	}
+	dst[dstend] = '\0';
 	return (srclen + dstend);
 }
 

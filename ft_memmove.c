@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:22:54 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/30 07:58:49 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/31 14:17:39 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			count;
 	unsigned char	*newdst;
 	unsigned char	*newsrc;
 
 	newdst = (unsigned char *) dst;
 	newsrc = (unsigned char *) src;
-	count = len -1;
-	if (!dst && !src)
+	if (dst < src)
 	{
-		return (0);
+		return (ft_memcpy(dst, src, len));
 	}
-	while (count >= 0)
+	if (dst > src)
 	{
-		newdst[count] = newsrc[count];
-		count--;
+		while (len--)
+		{
+			newdst[len] = newsrc[len];
+		}
 	}
 	return (dst);
 }

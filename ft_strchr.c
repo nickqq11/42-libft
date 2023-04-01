@@ -6,25 +6,25 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:26:08 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/27 14:14:12 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/03/31 14:23:52 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
 		if (c == *s)
 		{
-			return((char*) s);
+			return ((char *) s);
 		}
-		s++;        
+		s++;
 	}
 	if (*s == c)
-	return((char*)s);
-	return(NULL);
+		return ((char *)s);
+	return (NULL);
 }
 /*
 int main () 

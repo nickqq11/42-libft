@@ -6,7 +6,7 @@
 #    By: nhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 17:53:07 by nhuang            #+#    #+#              #
-#    Updated: 2023/03/19 21:05:03 by nhuang           ###   ########.fr        #
+#    Updated: 2023/03/31 14:33:56 by nhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,6 @@ clean :
 
 fclean :
 	@rm -f $(NAME)
+
+re :
+	@make fclean && make clean && make all
