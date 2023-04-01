@@ -6,7 +6,7 @@
 #    By: nhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 17:53:07 by nhuang            #+#    #+#              #
-#    Updated: 2023/03/31 14:33:56 by nhuang           ###   ########.fr        #
+#    Updated: 2023/04/01 18:58:59 by nhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(NAME) : $(OBJECTS)
 clean :
 	@rm -f *.o
 
-fclean :
+fclean : clean
 	@rm -f $(NAME)
 
 re :
