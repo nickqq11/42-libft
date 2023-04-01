@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:10:12 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/27 16:20:18 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/01 13:35:41 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sum;
+	int	neg;
 
 i = 0;
 sum = 0;
-	while (str[i] == ' ')
+neg = 1;
+while (str[i] != '\0' && (str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] =='\v' || str[i] == ' ' || str[i] == '\f'))
+	i++;
+	if (str[i] == '-')
 	{
+		neg = -1;
 		i++;
 	}
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 48 && str[i] <= 57)
-		{
-		sum = sum * 10 + (str[i] - '0');
+	if (str[i] == '+')
 		i++;
-		}
-		else
-			break ;
+	while (str[i] != '\0' && ft_isdigit(str[i]))
+	{
+		sum = (sum * 10) + (str[i++] - '0');
 	}
-	return (sum);
+	return (sum * neg);
 }
