@@ -6,21 +6,21 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:28:44 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/14 15:32:27 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/02 15:19:44 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 
 {
-    if (c >= 65 && c <= 90)
-    {
-        return(c + 32);
-    }
-    else
-    {
-        return(c);
-    }    
+	if (c >= 65 && c <= 90)
+	{
+		return (c + 32);
+	}
+	else
+	{
+		return (c);
+	}
 }

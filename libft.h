@@ -6,21 +6,21 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:54:15 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/31 13:09:01 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/02 17:07:54 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define	LIBFT_H
+# define LIBFT_H
 
-#include<unistd.h>
-#include<stdio.h>
-#include<stdlib.h>
+# include<unistd.h>
+# include<stdio.h>
+# include<stdlib.h>
 
 typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
 int			ft_isalpha(int c);
