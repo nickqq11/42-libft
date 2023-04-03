@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:11:46 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/02 18:17:38 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/03 16:08:57 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*word_dup(const char *str, int start, int finish)
 	int		i;
 
 	i = 0;
-	word = malloc((finish - start) * sizeof(char));
+	word = malloc((finish - start + 1) * sizeof(char));
 	while (start < finish)
 		word[i++] = str[start++];
 	word[i] = '\0';

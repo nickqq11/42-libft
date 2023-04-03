@@ -6,37 +6,48 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:12:02 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/02 20:23:52 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/03 18:53:08 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_itoa(int n)
+static size_t	findsize(int n)
 {
-	char	*str;
-	long	nbr;
 	size_t	size;
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
+	size = 0;
 	while (n)
 	{
 		n /= 10;
 		size++;
 	}
-	if (!(str = (char *)malloc(size + 1)))
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	size_t	size;
+	char	*str;
+
+	size = findsize(n);
+	if (n < 0)
+		size++;
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (0);
 	*(str + size--) = '\0';
-	while (nbr > 0)
+	if (n < 0)
 	{
-		*(str + size--) = nbr % 10 + '0';
-		nbr /= 10;
+		str[0] = '-';
+		n *= -1;
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
+	while (n)
+	{
+		*(str + size--) = n % 10 + '0';
+		n /= 10;
+	}
+	if (n < 0)
+		*(str + --size) = '-';
 	return (str);
 }
