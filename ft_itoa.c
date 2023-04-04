@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:12:02 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/03 18:53:08 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/04 14:13:17 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ static size_t	findsize(int n)
 	size_t	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		size++;
 	while (n)
 	{
 		n /= 10;
@@ -29,25 +33,26 @@ char	*ft_itoa(int n)
 {
 	size_t	size;
 	char	*str;
+	long	nbr;
 
+	nbr = n;
 	size = findsize(n);
-	if (n < 0)
-		size++;
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (0);
-	*(str + size--) = '\0';
-	if (n < 0)
+	*(str + size) = '\0';
+	if (n == 0)
+		str[0] = '0';
+	if (nbr < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nbr *= -1;
 	}
-	while (n)
+	while (nbr)
 	{
-		*(str + size--) = n % 10 + '0';
-		n /= 10;
+		*(str + (size - 1)) = nbr % 10 + '0';
+		nbr /= 10;
+		size--;
 	}
-	if (n < 0)
-		*(str + --size) = '-';
 	return (str);
 }
