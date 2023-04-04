@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:26:08 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/31 14:23:52 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/04 16:53:45 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
-	{
-		if (c == *s)
-		{
-			return ((char *) s);
-		}
-		s++;
-	}
-	if (*s == c)
-		return ((char *)s);
-	return (NULL);
+	size_t	a;
+	size_t	b;
+
+	a = -1;
+	b = ft_strlen(s);
+	while (++a < b + 1)
+		if (s[a] == (char)c)
+			return (((void *)&((char *)s)[a]));
+	return (0);
 }
+
 /*
 int main () 
 {

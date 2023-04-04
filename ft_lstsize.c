@@ -6,7 +6,21 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:14:58 by nhuang            #+#    #+#             */
-/*   Updated: 2023/03/28 22:14:59 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/04 17:33:41 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
+}
